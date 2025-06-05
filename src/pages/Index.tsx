@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Users, Zap, Shield, ArrowRight, Star } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const [email, setEmail] = useState("");
@@ -29,14 +30,27 @@ const Index = () => {
       {/* Header */}
       <header className="px-6 py-4 backdrop-blur-sm bg-white/80 border-b border-white/20 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">D</span>
             </div>
             <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
               Drively
             </span>
-          </div>
+          </Link>
+          
+          <nav className="hidden md:flex items-center space-x-8">
+            <Link to="/about" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
+              About Us
+            </Link>
+            <Link to="/for-brands" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
+              For Brands & Companies
+            </Link>
+            <Link to="/for-drivers" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
+              For Drivers
+            </Link>
+          </nav>
+
           <Badge variant="secondary" className="bg-purple-100 text-purple-700 hover:bg-purple-200">
             Coming Soon
           </Badge>
